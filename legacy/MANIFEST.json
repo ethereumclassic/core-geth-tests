@@ -1,0 +1,297 @@
+{
+  "description": "State tests carried from etclabscore/tests, with the fillers they name, never edited. legacy/README.md describes them.",
+  "source": {
+    "repository": "etclabscore/tests",
+    "commit": "06ec708ea7f3707826142a97a94b61d40c920696",
+    "preserved_on_branch": "dep-etclabscore-tests-06ec708ea7f3"
+  },
+  "license": {
+    "spdx": "MIT",
+    "text": "legacy/LICENSE"
+  },
+  "carried": [
+    {
+      "path": "legacy/GeneralStateTests",
+      "from": "GeneralStateTests",
+      "from_tree": "c6388dc14d609297facc9649f89ef369212ca3f0",
+      "tree": "8e7f2c2b966adb8a631b2bab723daad447b1b249",
+      "files": 2593,
+      "left_out": [
+        {
+          "path": "Shanghai/stEIP3651-warmcoinbase/coinbaseWarmAccountCallGas.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "Shanghai/stEIP3651-warmcoinbase/coinbaseWarmAccountCallGasFail.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "Shanghai/stEIP3855-push0/push0.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "Shanghai/stEIP3855-push0/push0Gas.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "Shanghai/stEIP3855-push0/push0Gas2.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "Shanghai/stEIP3860-limitmeterinitcode/create2InitCodeSizeLimit.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "Shanghai/stEIP3860-limitmeterinitcode/createInitCodeSizeLimit.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "Shanghai/stEIP3860-limitmeterinitcode/creationTxInitCodeSizeLimit.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CREATE2_EOF1.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CREATE2_EOF1Invalid.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CREATE2_EOF1Invalid_FromEOF.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CREATE2_EOF1_FromEOF.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CREATE_EOF1.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CREATE_EOF1Invalid.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CREATE_EOF1Invalid_FromEOF.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CREATE_EOF1_FromEOF.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CreateTransactionEOF1.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/CreateTransactionInvalidEOF1.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/EOF1_Calls.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stEIP3540/EOF1_Execution.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stExample/accessListExample.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stPreCompiledContracts2/CallEcrecover_Overflow.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stShift/.stub",
+          "reason": "not a test"
+        },
+        {
+          "path": "stTransactionTest/HighGasPrice.json",
+          "reason": "no ETC label"
+        },
+        {
+          "path": "stTransactionTest/ValueOverflow.json",
+          "reason": "no ETC label"
+        }
+      ]
+    },
+    {
+      "path": "legacy/src/GeneralStateTestsFiller",
+      "from": "src/GeneralStateTestsFiller",
+      "from_tree": "1bd3ff42ec61aa17bf86b07d148463bcaf3aa2f4",
+      "tree": "4b642768b04e5ea274942a0078af8d1f78b74494",
+      "files": 2593,
+      "left_out": [
+        {
+          "path": "Shanghai/stEIP3651-warmcoinbase/coinbaseWarmAccountCallGasFailFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "Shanghai/stEIP3651-warmcoinbase/coinbaseWarmAccountCallGasFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "Shanghai/stEIP3855-push0/push0Filler.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "Shanghai/stEIP3855-push0/push0Gas2Filler.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "Shanghai/stEIP3855-push0/push0GasFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "Shanghai/stEIP3860-limitmeterinitcode/create2InitCodeSizeLimitFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "Shanghai/stEIP3860-limitmeterinitcode/createInitCodeSizeLimitFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "Shanghai/stEIP3860-limitmeterinitcode/creationTxInitCodeSizeLimitFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "VMTests/dummyFiller.json",
+          "reason": "named by no test"
+        },
+        {
+          "path": "VMTests/vmArithmeticTest/twoOpsGen.js",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stArgsZeroOneBalance/README.md",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP1559/typeTwoBerlinFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CREATE2_EOF1Filler.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CREATE2_EOF1InvalidFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CREATE2_EOF1Invalid_FromEOFFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CREATE2_EOF1_FromEOFFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CREATE_EOF1Filler.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CREATE_EOF1InvalidFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CREATE_EOF1Invalid_FromEOFFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CREATE_EOF1_FromEOFFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CreateTransactionEOF1Filler.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/CreateTransactionInvalidEOF1Filler.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/EOF1_CallsFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3540/EOF1_ExecutionFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3860/create2InitCodeSizeLimitFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3860/createInitCodeSizeLimitFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stEIP3860/creationTxInitCodeSizeLimitFiller.yml",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stExample/accessListExampleFiller.yml",
+          "reason": "named only by a test left out",
+          "named_by": "GeneralStateTests/stExample/accessListExample.json"
+        },
+        {
+          "path": "stExpectSection/expectsectionWithoutTransactionFiller.json",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stExpectSection/result_eip1559EnvConvertionFiller.json",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stExpectSection/result_legacyEnvConvertionFiller.json",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stExpectSection/result_mergeEnvConvertionFiller.json",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stExpectSection/transactionMissingExpectsectionFiller.json",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stExpectSection/transactionRedundantExpectsectionFiller.json",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stPreCompiledContracts2/CallEcrecover_OverflowFiller.yml",
+          "reason": "named only by a test left out",
+          "named_by": "GeneralStateTests/stPreCompiledContracts2/CallEcrecover_Overflow.json"
+        },
+        {
+          "path": "stShift/.stub",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stStackTests/underflowTestGen.js",
+          "reason": "named by no test"
+        },
+        {
+          "path": "stTransactionTest/HighGasPriceFiller.yml",
+          "reason": "named only by a test left out",
+          "named_by": "GeneralStateTests/stTransactionTest/HighGasPrice.json"
+        },
+        {
+          "path": "stTransactionTest/ValueOverflowFiller.yml",
+          "reason": "named only by a test left out",
+          "named_by": "GeneralStateTests/stTransactionTest/ValueOverflow.json"
+        }
+      ]
+    },
+    {
+      "path": "legacy/LICENSE",
+      "from": "LICENSE",
+      "blob": "65f52d6f57b0ec2759930e9f4d3ec6a803d30bcf"
+    }
+  ]
+}

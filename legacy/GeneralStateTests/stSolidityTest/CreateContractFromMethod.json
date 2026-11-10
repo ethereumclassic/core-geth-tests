@@ -1,0 +1,94 @@
+{
+    "CreateContractFromMethod" : {
+        "_info" : {
+            "comment" : "",
+            "filling-rpc-server" : "evmetc version 1.12.9-unstable-550af1e1-20221005",
+            "filling-tool-version" : "retesteth-0.2.3-postmerge+commit.ca43bb20.Linux.g++",
+            "generatedTestHash" : "53921f40d4df717c67c1eebeaac17306075a5b7b09d322ecf16ae5f882bf86fe",
+            "lllcversion" : "Version: 0.5.14-develop.2022.7.30+commit.a096d7a9.Linux.g++",
+            "solidity" : "Version: 0.8.5+commit.a4f2e591.Linux.g++",
+            "source" : "src/GeneralStateTestsFiller/stSolidityTest/CreateContractFromMethodFiller.json",
+            "sourceHash" : "f9269b406e3a73ab97b874003e0f1e40dd398d5a4e5848974115f2310d618494"
+        },
+        "env" : {
+            "currentBaseFee" : "0x0a",
+            "currentCoinbase" : "0x2adc25665018aa1fe0e6bc666dac8fc2697ff9ba",
+            "currentDifficulty" : "0x020000",
+            "currentGasLimit" : "0x05f5e100",
+            "currentNumber" : "0x01",
+            "currentRandom" : "0x0000000000000000000000000000000000000000000000000000000000020000",
+            "currentTimestamp" : "0x03e8",
+            "previousHash" : "0x5e20a0453cecd065ea59c37ac63e079ee08998b6045136a8ce6635c7912ec0b6"
+        },
+        "post" : {
+            "ETC_Magneto" : [
+                {
+                    "hash" : "0x75369513b3921fabfd6ccf8d08686ed90c5c22481b0a27a4b269fde1a5cdfcc4",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf865800a8305573094095e7baea6a6c7c4c2dfeb977efac326af552d870184c0406226819ea0f38c592770f95eeb96a050d1a7faea4154d246a3d963b2dd3e40f4904a3c4c10a05c094e097b9d119f139e0ac302a8ce570d6532509baeafac56f9963e7c342436"
+                }
+            ],
+            "ETC_Mystique" : [
+                {
+                    "hash" : "0x75369513b3921fabfd6ccf8d08686ed90c5c22481b0a27a4b269fde1a5cdfcc4",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf865800a8305573094095e7baea6a6c7c4c2dfeb977efac326af552d870184c0406226819ea0f38c592770f95eeb96a050d1a7faea4154d246a3d963b2dd3e40f4904a3c4c10a05c094e097b9d119f139e0ac302a8ce570d6532509baeafac56f9963e7c342436"
+                }
+            ],
+            "ETC_Phoenix" : [
+                {
+                    "hash" : "0x75369513b3921fabfd6ccf8d08686ed90c5c22481b0a27a4b269fde1a5cdfcc4",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf865800a8305573094095e7baea6a6c7c4c2dfeb977efac326af552d870184c0406226819ea0f38c592770f95eeb96a050d1a7faea4154d246a3d963b2dd3e40f4904a3c4c10a05c094e097b9d119f139e0ac302a8ce570d6532509baeafac56f9963e7c342436"
+                }
+            ]
+        },
+        "pre" : {
+            "0x095e7baea6a6c7c4c2dfeb977efac326af552d87" : {
+                "balance" : "0x0186a0",
+                "code" : "0x60003560e060020a900480637ee17e1214601f578063c040622614602b57005b60256047565b60006000f35b6031603b565b8060005260206000f35b600060436047565b5090565b60006060605d600039606060006000f09050905600605480600c6000396000f30060003560e060020a90048062f55d9d14601e578063b9c3d0a514602d57005b60276004356046565b60006000f35b6033603d565b8060005260206000f35b600060e1905090565b80600160a060020a0316ff5056",
+                "nonce" : "0x00",
+                "storage" : {
+                }
+            },
+            "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b" : {
+                "balance" : "0x05f5e100",
+                "code" : "0x",
+                "nonce" : "0x00",
+                "storage" : {
+                }
+            }
+        },
+        "transaction" : {
+            "data" : [
+                "0xc0406226"
+            ],
+            "gasLimit" : [
+                "0x055730"
+            ],
+            "gasPrice" : "0x0a",
+            "nonce" : "0x00",
+            "secretKey" : "0x45a915e4d060149eb4365960e6a7a45f334393093061116b197e3240065ff2d8",
+            "sender" : "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+            "to" : "0x095e7baea6a6c7c4c2dfeb977efac326af552d87",
+            "value" : [
+                "0x01"
+            ]
+        }
+    }
+}

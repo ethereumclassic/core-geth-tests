@@ -1,0 +1,87 @@
+{
+    "createNameRegistratorPerTxsAt" : {
+        "_info" : {
+            "comment" : "",
+            "filling-rpc-server" : "evmetc version 1.12.9-unstable-550af1e1-20221005",
+            "filling-tool-version" : "retesteth-0.2.3-postmerge+commit.ca43bb20.Linux.g++",
+            "generatedTestHash" : "709fddf092fc9323ca953f654987e1e4254a58955cda45e7c624c42233435329",
+            "lllcversion" : "Version: 0.5.14-develop.2022.7.30+commit.a096d7a9.Linux.g++",
+            "solidity" : "Version: 0.8.5+commit.a4f2e591.Linux.g++",
+            "source" : "src/GeneralStateTestsFiller/stTransitionTest/createNameRegistratorPerTxsAtFiller.json",
+            "sourceHash" : "8f906fa8cda1bb49789486868e3eb468019031f6c637579345e997674710fb43"
+        },
+        "env" : {
+            "currentBaseFee" : "0x0a",
+            "currentCoinbase" : "0x2adc25665018aa1fe0e6bc666dac8fc2697ff9ba",
+            "currentDifficulty" : "0x020000",
+            "currentGasLimit" : "0x02540be400",
+            "currentNumber" : "0x01",
+            "currentRandom" : "0x0000000000000000000000000000000000000000000000000000000000020000",
+            "currentTimestamp" : "0x03e8",
+            "previousHash" : "0x5e20a0453cecd065ea59c37ac63e079ee08998b6045136a8ce6635c7912ec0b6"
+        },
+        "post" : {
+            "ETC_Magneto" : [
+                {
+                    "hash" : "0xea7469f53a8c4b38e2b0d66cdefb729995e8fd53b88598cc0a112b45c696bf5c",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf872800a83030d4080830186a0a26001600155601080600c6000396000f3006000355415600957005b60203560003555819ea0da07e4fcaa9ffac06ed976c7b19890993534075951e743dc205f8c06ace2dc11a00d7903f29f819aa631fed96082da400e582ae5404ff31b4079d86f9486322e98"
+                }
+            ],
+            "ETC_Mystique" : [
+                {
+                    "hash" : "0xea7469f53a8c4b38e2b0d66cdefb729995e8fd53b88598cc0a112b45c696bf5c",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf872800a83030d4080830186a0a26001600155601080600c6000396000f3006000355415600957005b60203560003555819ea0da07e4fcaa9ffac06ed976c7b19890993534075951e743dc205f8c06ace2dc11a00d7903f29f819aa631fed96082da400e582ae5404ff31b4079d86f9486322e98"
+                }
+            ],
+            "ETC_Phoenix" : [
+                {
+                    "hash" : "0x8cd1585d9d34dc68046c9e685145a49a2dfa96cf9fe75ad8ca54842f6385c6ce",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf872800a83030d4080830186a0a26001600155601080600c6000396000f3006000355415600957005b60203560003555819ea0da07e4fcaa9ffac06ed976c7b19890993534075951e743dc205f8c06ace2dc11a00d7903f29f819aa631fed96082da400e582ae5404ff31b4079d86f9486322e98"
+                }
+            ]
+        },
+        "pre" : {
+            "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b" : {
+                "balance" : "0x0de0b6b3a7640000",
+                "code" : "0x",
+                "nonce" : "0x00",
+                "storage" : {
+                }
+            }
+        },
+        "transaction" : {
+            "data" : [
+                "0x6001600155601080600c6000396000f3006000355415600957005b60203560003555"
+            ],
+            "gasLimit" : [
+                "0x030d40"
+            ],
+            "gasPrice" : "0x0a",
+            "nonce" : "0x00",
+            "secretKey" : "0x45a915e4d060149eb4365960e6a7a45f334393093061116b197e3240065ff2d8",
+            "sender" : "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+            "to" : "",
+            "value" : [
+                "0x0186a0"
+            ]
+        }
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "coinbaseT2" : {
+        "_info" : {
+            "comment" : "Ori Pomerantz qbzzt1@gmail.com",
+            "filling-rpc-server" : "evmetc version 1.12.9-unstable-550af1e1-20221005",
+            "filling-tool-version" : "retesteth-0.2.3-postmerge+commit.ca43bb20.Linux.g++",
+            "generatedTestHash" : "0c99efdf2eee7f353a283c7a40fdec24c741d16f03a58f3a90da38d7b7afe8ce",
+            "labels" : {
+                "0" : "T2baseInList",
+                "1" : "T2baseNotInList"
+            },
+            "lllcversion" : "Version: 0.5.14-develop.2022.7.30+commit.a096d7a9.Linux.g++",
+            "solidity" : "Version: 0.8.5+commit.a4f2e591.Linux.g++",
+            "source" : "src/GeneralStateTestsFiller/stEIP2930/coinbaseT2Filler.yml",
+            "sourceHash" : "cc9290fb06e6eff2e101fa28a61654c580aca0d700584b7b8f9f807de1b8829c"
+        },
+        "env" : {
+            "currentBaseFee" : "0x64",
+            "currentCoinbase" : "0x000000000000000000000000000000000000ba5e",
+            "currentDifficulty" : "0x020000",
+            "currentGasLimit" : "0xff112233445566",
+            "currentNumber" : "0x01",
+            "currentRandom" : "0x0000000000000000000000000000000000000000000000000000000000020000",
+            "currentTimestamp" : "0x03e8",
+            "previousHash" : "0x5e20a0453cecd065ea59c37ac63e079ee08998b6045136a8ce6635c7912ec0b6"
+        },
+        "post" : {
+            "ETC_Mystique" : [
+                {
+                    "expectException" : "TR_TypeNotSupported",
+                    "hash" : "0x99fa85e1d718045941b9f7ddb5b2993129a00f2d90fa52b92ef0f94cb06e4360",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0x02f8a13d01648227108402625a0094000000000000000000000000000000000000c0de80a4693c61390000000000000000000000000000000000000000000000000000000000000000d7d694000000000000000000000000000000000000ba5ec080a0d54afc9e9e4cdb68f7233d785641919c3e832dea4143de86130d6df1c660f627a021b4fd3281c381b4db95d171f0d1d8fa31c3bda401ff770f4f25320d7e294d7d"
+                },
+                {
+                    "expectException" : "TR_TypeNotSupported",
+                    "hash" : "0x99fa85e1d718045941b9f7ddb5b2993129a00f2d90fa52b92ef0f94cb06e4360",
+                    "indexes" : {
+                        "data" : 1,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0x02f8a13d01648227108402625a0094000000000000000000000000000000000000c0de80a4693c61390000000000000000000000000000000000000000000000000000000000000000d7d694000000000000000000000000000000000000ba5ac080a059d2834f0e7c3b026fc95f215322ed97eaebf4c5c95f855e29020012aab1cf26a06e6c01af92fba453b627f5c9324ea9945f7012897575d57693932d5e95817abb"
+                }
+            ]
+        },
+        "pre" : {
+            "0x000000000000000000000000000000000000ba5e" : {
+                "balance" : "0x00",
+                "code" : "0x",
+                "nonce" : "0x01",
+                "storage" : {
+                }
+            },
+            "0x000000000000000000000000000000000000c0de" : {
+                "balance" : "0x0de0b6b3a7640000",
+                "code" : "0x5a6000526000600060006000620f424061ba5e5af1505a60205260216020516000510303600055",
+                "nonce" : "0x01",
+                "storage" : {
+                }
+            },
+            "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b" : {
+                "balance" : "0x0de0b6b3a7640000",
+                "code" : "0x",
+                "nonce" : "0x01",
+                "storage" : {
+                }
+            }
+        },
+        "transaction" : {
+            "accessLists" : [
+                [
+                    {
+                        "address" : "0x000000000000000000000000000000000000ba5e",
+                        "storageKeys" : [
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "address" : "0x000000000000000000000000000000000000ba5a",
+                        "storageKeys" : [
+                        ]
+                    }
+                ]
+            ],
+            "data" : [
+                "0x693c61390000000000000000000000000000000000000000000000000000000000000000",
+                "0x693c61390000000000000000000000000000000000000000000000000000000000000000"
+            ],
+            "gasLimit" : [
+                "0x02625a00"
+            ],
+            "maxFeePerGas" : "0x2710",
+            "maxPriorityFeePerGas" : "0x64",
+            "nonce" : "0x01",
+            "secretKey" : "0x45a915e4d060149eb4365960e6a7a45f334393093061116b197e3240065ff2d8",
+            "sender" : "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+            "to" : "0x000000000000000000000000000000000000c0de",
+            "value" : [
+                "0x00"
+            ]
+        }
+    }
+}

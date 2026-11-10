@@ -1,0 +1,93 @@
+{
+    "refundFF" : {
+        "_info" : {
+            "comment" : "Ori Pomerantz   qbzzt1@gmail.com",
+            "filling-rpc-server" : "evmetc version 1.12.9-unstable-550af1e1-20221005",
+            "filling-tool-version" : "retesteth-0.2.3-postmerge+commit.ca43bb20.Linux.g++",
+            "generatedTestHash" : "0b47a0824bcc18d83b009eb13db6c75e598d3b04cbce25a88969c4c83a3df614",
+            "lllcversion" : "Version: 0.5.14-develop.2022.7.30+commit.a096d7a9.Linux.g++",
+            "solidity" : "Version: 0.8.5+commit.a4f2e591.Linux.g++",
+            "source" : "src/GeneralStateTestsFiller/stRefundTest/refundFFFiller.yml",
+            "sourceHash" : "8457e94e9bbe042830d85aa1ab0d788bce6efb784fb1a6b2fd06b103e20b512b"
+        },
+        "env" : {
+            "currentBaseFee" : "0x03e8",
+            "currentCoinbase" : "0x2adc25665018aa1fe0e6bc666dac8fc2697ff9ba",
+            "currentDifficulty" : "0x020000",
+            "currentGasLimit" : "0x01000000",
+            "currentNumber" : "0x01",
+            "currentRandom" : "0x0000000000000000000000000000000000000000000000000000000000020000",
+            "currentTimestamp" : "0x03e8",
+            "previousHash" : "0x5e20a0453cecd065ea59c37ac63e079ee08998b6045136a8ce6635c7912ec0b6"
+        },
+        "post" : {
+            "ETC_Magneto" : [
+                {
+                    "hash" : "0x4c63b99dca1faff010457fad0507433ae6d1f86a2228da946bf42ccaf3689110",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0x01f8643d018203e88327b02894cccccccccccccccccccccccccccccccccccccccc8000c001a056020e9c94c76fc76353a7b8c38448b73c4ca8764d8ebce18ed5987ddccb9788a0036c64aaf754985cf63935ca2f4156a59fc7e7b1b90b056ab3d6bcdaf10c47a7"
+                }
+            ],
+            "ETC_Mystique" : [
+                {
+                    "hash" : "0x177754853fdfafc3e58314c37f66173f0e3d4b1b5f30fc6f25388ee4b157ae05",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0x01f8643d018203e88327b02894cccccccccccccccccccccccccccccccccccccccc8000c001a056020e9c94c76fc76353a7b8c38448b73c4ca8764d8ebce18ed5987ddccb9788a0036c64aaf754985cf63935ca2f4156a59fc7e7b1b90b056ab3d6bcdaf10c47a7"
+                }
+            ]
+        },
+        "pre" : {
+            "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b" : {
+                "balance" : "0xe8d6599218",
+                "code" : "0x",
+                "nonce" : "0x01",
+                "storage" : {
+                }
+            },
+            "0xcccccccccccccccccccccccccccccccccccccccc" : {
+                "balance" : "0x00",
+                "code" : "0x73ddddddddddddddddddddddddddddddddddddddddff",
+                "nonce" : "0x01",
+                "storage" : {
+                }
+            },
+            "0xdddddddddddddddddddddddddddddddddddddddd" : {
+                "balance" : "0x00",
+                "code" : "0x",
+                "nonce" : "0x01",
+                "storage" : {
+                }
+            }
+        },
+        "transaction" : {
+            "accessLists" : [
+                [
+                ]
+            ],
+            "data" : [
+                "0x00"
+            ],
+            "gasLimit" : [
+                "0x27b028"
+            ],
+            "gasPrice" : "0x03e8",
+            "nonce" : "0x01",
+            "secretKey" : "0x45a915e4d060149eb4365960e6a7a45f334393093061116b197e3240065ff2d8",
+            "sender" : "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+            "to" : "0xcccccccccccccccccccccccccccccccccccccccc",
+            "value" : [
+                "0x00"
+            ]
+        }
+    }
+}

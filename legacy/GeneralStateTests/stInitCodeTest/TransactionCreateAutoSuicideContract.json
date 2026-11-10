@@ -1,0 +1,87 @@
+{
+    "TransactionCreateAutoSuicideContract" : {
+        "_info" : {
+            "comment" : "",
+            "filling-rpc-server" : "evmetc version 1.12.9-unstable-550af1e1-20221005",
+            "filling-tool-version" : "retesteth-0.2.3-postmerge+commit.ca43bb20.Linux.g++",
+            "generatedTestHash" : "5ae25f4cb0ca1e93313d9d6878c2aa4d50170aafef791082832868185092c93c",
+            "lllcversion" : "Version: 0.5.14-develop.2022.7.30+commit.a096d7a9.Linux.g++",
+            "solidity" : "Version: 0.8.5+commit.a4f2e591.Linux.g++",
+            "source" : "src/GeneralStateTestsFiller/stInitCodeTest/TransactionCreateAutoSuicideContractFiller.json",
+            "sourceHash" : "dbfcf51094ec0263077a17d34155c1bcdcba2e2b39637cdb2c9d6d6e643a1e71"
+        },
+        "env" : {
+            "currentBaseFee" : "0x0a",
+            "currentCoinbase" : "0x2adc25665018aa1fe0e6bc666dac8fc2697ff9ba",
+            "currentDifficulty" : "0x020000",
+            "currentGasLimit" : "0x0f4240",
+            "currentNumber" : "0x01",
+            "currentRandom" : "0x0000000000000000000000000000000000000000000000000000000000020000",
+            "currentTimestamp" : "0x03e8",
+            "previousHash" : "0x5e20a0453cecd065ea59c37ac63e079ee08998b6045136a8ce6635c7912ec0b6"
+        },
+        "post" : {
+            "ETC_Magneto" : [
+                {
+                    "hash" : "0xc628c114aeaf824687c7616a5ffbbb4a41f3e96151ccfe12d297a1ac94b193a0",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf863800a82d6d8800f97600a80600c6000396000fff2ffff600160008035811a81819da03b19cb3eb625261beebab1e619b2a4f1c1cb3e2fe4936696fb1d7caddb0e8d08a06fda67d0b37e3f3e87313841ab53cd52c6338b212c6b422fc2510cfa994bc1b9"
+                }
+            ],
+            "ETC_Mystique" : [
+                {
+                    "hash" : "0xc628c114aeaf824687c7616a5ffbbb4a41f3e96151ccfe12d297a1ac94b193a0",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf863800a82d6d8800f97600a80600c6000396000fff2ffff600160008035811a81819da03b19cb3eb625261beebab1e619b2a4f1c1cb3e2fe4936696fb1d7caddb0e8d08a06fda67d0b37e3f3e87313841ab53cd52c6338b212c6b422fc2510cfa994bc1b9"
+                }
+            ],
+            "ETC_Phoenix" : [
+                {
+                    "hash" : "0xc628c114aeaf824687c7616a5ffbbb4a41f3e96151ccfe12d297a1ac94b193a0",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf863800a82d6d8800f97600a80600c6000396000fff2ffff600160008035811a81819da03b19cb3eb625261beebab1e619b2a4f1c1cb3e2fe4936696fb1d7caddb0e8d08a06fda67d0b37e3f3e87313841ab53cd52c6338b212c6b422fc2510cfa994bc1b9"
+                }
+            ]
+        },
+        "pre" : {
+            "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b" : {
+                "balance" : "0x0f4240",
+                "code" : "0x",
+                "nonce" : "0x00",
+                "storage" : {
+                }
+            }
+        },
+        "transaction" : {
+            "data" : [
+                "0x600a80600c6000396000fff2ffff600160008035811a81"
+            ],
+            "gasLimit" : [
+                "0xd6d8"
+            ],
+            "gasPrice" : "0x0a",
+            "nonce" : "0x00",
+            "secretKey" : "0x45a915e4d060149eb4365960e6a7a45f334393093061116b197e3240065ff2d8",
+            "sender" : "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+            "to" : "",
+            "value" : [
+                "0x0f"
+            ]
+        }
+    }
+}

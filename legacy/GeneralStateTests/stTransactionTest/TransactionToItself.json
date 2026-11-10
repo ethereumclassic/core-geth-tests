@@ -1,0 +1,87 @@
+{
+    "TransactionToItself" : {
+        "_info" : {
+            "comment" : "",
+            "filling-rpc-server" : "evmetc version 1.12.9-unstable-550af1e1-20221005",
+            "filling-tool-version" : "retesteth-0.2.3-postmerge+commit.ca43bb20.Linux.g++",
+            "generatedTestHash" : "dd31dc94081471dbf66e0b987e340db7bc4843eba255fe40f49b9cd70e26cb84",
+            "lllcversion" : "Version: 0.5.14-develop.2022.7.30+commit.a096d7a9.Linux.g++",
+            "solidity" : "Version: 0.8.5+commit.a4f2e591.Linux.g++",
+            "source" : "src/GeneralStateTestsFiller/stTransactionTest/TransactionToItselfFiller.json",
+            "sourceHash" : "96ba566d862894b7c1e8ef4286b77a7ee74ec78d1771a50369949499c61b8ede"
+        },
+        "env" : {
+            "currentBaseFee" : "0x0a",
+            "currentCoinbase" : "0x2adc25665018aa1fe0e6bc666dac8fc2697ff9ba",
+            "currentDifficulty" : "0x020000",
+            "currentGasLimit" : "0x0f4240",
+            "currentNumber" : "0x01",
+            "currentRandom" : "0x0000000000000000000000000000000000000000000000000000000000020000",
+            "currentTimestamp" : "0x03e8",
+            "previousHash" : "0x5e20a0453cecd065ea59c37ac63e079ee08998b6045136a8ce6635c7912ec0b6"
+        },
+        "post" : {
+            "ETC_Magneto" : [
+                {
+                    "hash" : "0xd44397f5a909dfdc535a8d18ba45596639c5cf23be0e67d060b2827136d41f6f",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf860800a8261a894a94f5374fce5edbc8e2a8697c15331677e6ebf0b0180819da0ffb6c6203da3010baab16794ef980cd28808f3ee0aebb9d4aad38798b04578b3a00a483b8b8ee389ff1ecc4993db875233f94676ba4d61c5bb22f89cf286da3471"
+                }
+            ],
+            "ETC_Mystique" : [
+                {
+                    "hash" : "0xd44397f5a909dfdc535a8d18ba45596639c5cf23be0e67d060b2827136d41f6f",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf860800a8261a894a94f5374fce5edbc8e2a8697c15331677e6ebf0b0180819da0ffb6c6203da3010baab16794ef980cd28808f3ee0aebb9d4aad38798b04578b3a00a483b8b8ee389ff1ecc4993db875233f94676ba4d61c5bb22f89cf286da3471"
+                }
+            ],
+            "ETC_Phoenix" : [
+                {
+                    "hash" : "0xd44397f5a909dfdc535a8d18ba45596639c5cf23be0e67d060b2827136d41f6f",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf860800a8261a894a94f5374fce5edbc8e2a8697c15331677e6ebf0b0180819da0ffb6c6203da3010baab16794ef980cd28808f3ee0aebb9d4aad38798b04578b3a00a483b8b8ee389ff1ecc4993db875233f94676ba4d61c5bb22f89cf286da3471"
+                }
+            ]
+        },
+        "pre" : {
+            "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b" : {
+                "balance" : "0x3b9aca00",
+                "code" : "0x",
+                "nonce" : "0x00",
+                "storage" : {
+                }
+            }
+        },
+        "transaction" : {
+            "data" : [
+                "0x"
+            ],
+            "gasLimit" : [
+                "0x61a8"
+            ],
+            "gasPrice" : "0x0a",
+            "nonce" : "0x00",
+            "secretKey" : "0x45a915e4d060149eb4365960e6a7a45f334393093061116b197e3240065ff2d8",
+            "sender" : "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+            "to" : "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+            "value" : [
+                "0x01"
+            ]
+        }
+    }
+}
