@@ -1,0 +1,17 @@
+ethereumclassic/core-geth-tests
+
+This repository's own work is licensed under the MIT License in LICENSE.
+
+Material that comes from elsewhere keeps the license it arrived under, and its
+copyright and permission notice travel with it. This file lists each such item:
+what it is, where it came from, its license, and where the license text sits in
+this repository.
+
+--------------------------------------------------------------------------------
+
+The legacy suite
+  Material  the state tests in legacy/GeneralStateTests and the fillers in
+            legacy/src/GeneralStateTestsFiller, copied unedited
+  Source    etclabscore/tests, commit 06ec708ea7f3707826142a97a94b61d40c920696
+  License   MIT, Copyright 2014 Ethereum Foundation
+  Text      legacy/LICENSE
