@@ -1,0 +1,71 @@
+# Nothing in this repository should ever hold a credential: it is test data and
+# documentation. These patterns guard against an accident.
+#
+# Verify coverage by effect, never by reading these patterns, and calibrate the
+# check against a path that must NOT be ignored:
+#
+#   git -c core.excludesFile=/dev/null check-ignore --no-index -q -- .env && echo ignored || echo "NOT ignored"
+#   git -c core.excludesFile=/dev/null check-ignore --no-index -q -- README.md && echo "check is broken" || echo "check discriminates"
+#
+# Without --no-index a tracked file reads as not ignored even when a pattern
+# covers it; without -c core.excludesFile=/dev/null a machine-wide ignore file
+# can answer instead of this one.
+
+# Secrets and credentials
+.env
+.env.*
+# The example class, not one file name: .env.local.example is a template and is
+# committed. End-anchored, so .env.example.local stays ignored.
+!.env*.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ecdsa
+id_ed25519
+credentials.json
+service-account.json
+secrets/
+
+# Package-registry auth. These carry registry tokens, and nothing here uses a
+# registry, so they are ignored outright.
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+# Claude Code. The .claude/ directory is tracked, so its settings reach every
+# clone; only machine-local and agent-written state is held back.
+.claude/settings.local.json
+.claude/worktrees/
+.claude/agent-memory-local/
+.claude/launch.json
+.claude/scheduled_tasks.json
+CLAUDE.local.md
+.claude/**/*.local.*
+.claude/**/*-local/
+
+# Private working directory and ad hoc notes
+.local/
+SESSION_NOTES.md
+PLANNING.md
+SCRATCH.md
+*.scratch.*
+*.draft.*
+
+# Keys, wallets and node secrets
+keystore/
+*.keystore
+wallet.json
+mnemonic.txt
+nodekey
+nodekey.*
+jwtsecret
+
+# Editors and operating systems
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git tag *)",
+      "Bash(git reset *)",
+      "Bash(git checkout *)",
+      "Bash(git switch *)",
+      "Bash(git restore *)",
+      "Bash(git rm *)",
+      "Bash(git mv *)",
+      "Bash(git merge *)",
+      "Bash(git rebase *)",
+      "Bash(git submodule *)",
+      "Edit(/NOTICE)",
+      "Edit(/.github/workflows/**)"
+    ],
+    "deny": [
+      "Edit(/LICENSE)",
+      "Edit(/legacy/**)"
+    ]
+  },
+  "claudeMdExcludes": [
+    "**/ethereum/upstream/**"
+  ]
+}
