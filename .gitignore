@@ -62,6 +62,9 @@ nodekey
 nodekey.*
 jwtsecret
 
+# Python bytecode, written when tools/ runs
+__pycache__/
+
 # Editors and operating systems
 .vscode/settings.json
 .idea/

@@ -1,0 +1,41 @@
+# check: verifies the tree on every pull request, every push to main, and on demand.
+#
+# Nothing is installed: tools/ is Python's standard library, run by the
+# runner's own python3. The one fetch is this repository's own source branch
+# for the legacy suite, trees only (about 0.3 MB), so that every run rebuilds
+# the legacy suite from its source commit.
+
+name: check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Least privilege: the job only reads the repository.
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          submodules: false
+          persist-credentials: false
+
+      - name: Fetch the legacy suite's source trees, without file contents
+        run: >-
+          git fetch --no-tags --depth=1 --filter=blob:none origin
+          +refs/heads/dep-etclabscore-tests-06ec708ea7f3:refs/remotes/origin/dep-etclabscore-tests-06ec708ea7f3
+
+      - name: Test the tools
+        run: python3 -I -m unittest discover -s tools/tests -t tools
+
+      - name: Check the tree
+        run: python3 -I tools/check.py --require-source
