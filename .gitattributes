@@ -1,0 +1,4 @@
+# Files are checked out exactly as they were committed: git converts no line
+# endings, on any platform. The suites are compared byte for byte with recorded
+# hashes, and a client reading them by path gets the committed bytes.
+* -text
