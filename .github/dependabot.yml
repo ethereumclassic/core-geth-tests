@@ -1,0 +1,37 @@
+# Dependency updates for core-geth-tests.
+#
+# VERSION UPDATES ARE OFF, by decision. `open-pull-requests-limit: 0` is
+# GitHub's documented way to disable version updates for an ecosystem while
+# keeping the configuration visible. It is not an oversight: do not "fix" it
+# into an active configuration.
+#
+# WHAT THIS REPOSITORY HOLDS
+#   One ecosystem key names something here: `github-actions`, for the workflow
+#   under .github/workflows/. tools/ uses Python's standard library alone, so
+#   there is no package manifest, and there is no container image or submodule.
+#
+# WHY OFF
+#   Every `uses:` line is pinned to a full commit SHA and moves only in a
+#   reviewed change. A standing queue of bump pull requests that nobody triages
+#   reports itself as a control while operating as noise.
+#
+# WHAT THIS DOES NOT DO
+#   Dependabot security updates are a repository setting with no key in this
+#   file. Nothing here turns them on or off, and a limit of zero does not
+#   withhold them: their pull requests are not subject to this limit. They were
+#   off when this file was written. Confirm the setting directly rather than
+#   inferring it from this file.
+#
+# WHAT WOULD CHANGE IT
+#   Someone taking ownership of the queue. Raising the limit brings a
+#   `cooldown:` block with it; `github-actions` supports `default-days` but not
+#   the SemVer-bump keys. There is no cooldown here: while the limit is zero it
+#   would gate nothing.
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
