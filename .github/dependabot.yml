@@ -6,7 +6,7 @@
 # into an active configuration.
 #
 # WHAT THIS REPOSITORY HOLDS
-#   One ecosystem key names something here: `github-actions`, for the workflow
+#   One ecosystem key names something here: `github-actions`, for the workflows
 #   under .github/workflows/. tools/ uses Python's standard library alone, so
 #   there is no package manifest, and there is no container image or submodule.
 #

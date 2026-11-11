@@ -1,0 +1,96 @@
+# release: on a tag legacy/v*, builds the legacy suite's release file from the tagged commit and leaves it in a
+# draft release, for a maintainer to check and publish.
+#
+# Two jobs, so this repository's code never runs where the write token is: build reads the repository and runs
+# tools/; draft holds contents: write, checks out nothing, and publishes only the files build made. A tag on a
+# commit main does not hold is refused before any of the repository's code runs. Nothing is installed: tools/ is
+# Python's standard library and gh is the runner's own.
+
+name: release
+
+on:
+  push:
+    tags:
+      - "legacy/v*"
+
+permissions: {}
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Refuse a commit main does not hold
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(gh api "repos/$GITHUB_REPOSITORY/compare/main...$GITHUB_SHA" --jq .status)
+          case "$status" in
+            identical|behind) echo "$GITHUB_SHA is on main ($status)" ;;
+            *) echo "$GITHUB_SHA is not on main ($status)"; exit 1 ;;
+          esac
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          submodules: false
+          persist-credentials: false
+
+      - name: Fetch the legacy suite's source trees, without file contents
+        run: >-
+          git fetch --no-tags --depth=1 --filter=blob:none origin
+          +refs/heads/dep-etclabscore-tests-06ec708ea7f3:refs/remotes/origin/dep-etclabscore-tests-06ec708ea7f3
+
+      - name: Test the tools
+        run: python3 -I -m unittest discover -s tools/tests -t tools
+
+      - name: Check the tree, with every legacy test's hashes
+        run: python3 -I tools/check.py --legacy-hashes --require-source
+
+      - name: Build the release file
+        run: python3 -I tools/release.py "$GITHUB_REF_NAME" --out "$RUNNER_TEMP/release" --notes "$RUNNER_TEMP/release/notes.md"
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release
+          path: ${{ runner.temp }}/release/
+          if-no-files-found: error
+          retention-days: 7
+
+  draft:
+    name: draft
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: release
+          path: ${{ runner.temp }}/release
+
+      - name: Create the draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        working-directory: ${{ runner.temp }}/release
+        run: |
+          gh --version
+          name="core-geth-tests-legacy-${GITHUB_REF_NAME#legacy/}.tar.gz"
+          listed=$(ls -A | LC_ALL=C sort | tr '\n' ' ')
+          test "$listed" = "$name $name.sha256 notes.md " || { echo "unexpected files: $listed"; exit 1; }
+          sha256sum --check --strict "$name.sha256"
+          tagged=$(gh api "repos/$GITHUB_REPOSITORY/commits/refs/tags/$GITHUB_REF_NAME" --jq .sha)
+          test "$tagged" = "$GITHUB_SHA" || { echo "$GITHUB_REF_NAME is $tagged, not $GITHUB_SHA"; exit 1; }
+          releases=$(gh api --paginate "repos/$GITHUB_REPOSITORY/releases" --jq '.[].tag_name')
+          if grep -Fxq -- "$GITHUB_REF_NAME" <<< "$releases"; then
+            echo "a release for $GITHUB_REF_NAME exists"; exit 1
+          fi
+          gh release create "$GITHUB_REF_NAME" "$name" "$name.sha256" --repo "$GITHUB_REPOSITORY" --verify-tag \
+            --target "$GITHUB_SHA" --draft --title "$GITHUB_REF_NAME" --notes-file notes.md
