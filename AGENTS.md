@@ -14,6 +14,7 @@ Read what is present from the tree, never from a count in a document:
 | `legacy/` | the legacy suite: the state test files from `etclabscore/tests` that carry an ETC label, exactly the fillers they name, and the source's `LICENSE`. Never edited (below) |
 | `ethereum/` | the Ethereum suite: the Ethereum Foundation's tests, each source pinned. The directory appears with its first file |
 | `ethereumclassic/` | the Ethereum Classic suite: tests of our own. The directory appears with its first file |
+| `tools/` | this repository's checks, in Python's standard library, with their own tests (Commands, below) |
 | `LICENSE`, `NOTICE`, `SECURITY.md` | this repository's terms, the index of material from elsewhere, and how to report a vulnerability |
 
 **Grades.** A test is graded by where its expected values came from, and the grade is the weakest its
@@ -38,8 +39,8 @@ is a regression baseline throughout, because core-geth filled its expected value
   `06ec708ea7f3707826142a97a94b61d40c920696`. Do not edit, reformat, re-key, rename or re-fill any
   of them.
 - `legacy/MANIFEST.json` lists what was left out of the source, each path with its reason. The suite
-  is checked by rebuilding each tree from the source commit minus that list, not by one tree hash;
-  `legacy/README.md` carries the command.
+  is checked by rebuilding each tree from the source commit minus that list, not by one tree hash:
+  `tools/check.py` does it on every pull request, and `legacy/README.md` carries the command.
 - A wrong legacy test stays as it is. A test of the Ethereum Classic suite that covers the same rule
   at a stronger grade answers it, and the legacy file is removed only in the review that lands that
   test, which names both and checks that the new test asserts everything the old filler's `expect`
@@ -67,7 +68,13 @@ is a regression baseline throughout, because core-geth filled its expected value
   `ethereumclassic/core-geth` composes its configuration: each rule has its own activation, and a fork
   is the set of rules activated together. Read which rules a fork holds from core-geth's network
   configuration, never from the Ethereum fork of a similar name.
-- **Expected values come from the specification or from implementations other than core-geth.**
+- **Expected values come from the specification or from implementations other than core-geth, except
+  in a partial test.** A partial test's expected values came from core-geth, and it is admitted only
+  with a second check, independent of core-geth, named in its `_info`. It is kept as the model for a
+  complete test: the coverage ledger records it as a known issue of its rule, whose status stays
+  partial until a test with expected values from the specification or another implementation
+  replaces it, and it is removed in the review that lands that replacement. A regression baseline is
+  never admitted here: regression baselines stay in `legacy/` and in core-geth's own test data.
 - **How tests are written:** as code, filled into the fixture formats clients read, each port of an
   older test citing the legacy file and filler it replaces. Which framework fills them is the
   maintainer's decision; do not invent one.
@@ -105,12 +112,26 @@ it there.
 
 ## Commands
 
-This repository defines no build, test runner, linter, formatter, CI or tool. Nothing here executes
-a fixture: a client does. Do not invent a command, and do not assume one exists because the ecosystem
-usually has one. The commands that measure and check the legacy suite are in `legacy/README.md` and
-need only git, Python 3's standard library and a shell. Prefer parsing the JSON to a text search: a
-regex over JSON matches names wherever they appear, including in `_info` commentary, so it counts
-mentions rather than structure.
+Nothing here executes a fixture: a client does. This repository's checks are `tools/`, written in
+Python 3's standard library alone, with no package manifest and nothing to install. From the
+repository root:
+
+```bash
+python3 -I tools/check.py                                 # every check; CI adds --require-source
+python3 -I -m unittest discover -s tools/tests -t tools   # the tools' own tests
+python3 -I tools/check.py --legacy-hashes                 # every legacy test's retesteth hashes
+```
+
+`check` verifies that each JSON file and each legacy filler parses; that each Ethereum Classic test
+states its grade, oracle and source under the rule above; that each recorded content hash recomputes;
+that no test sits in two suites; that `legacy/` is its source commit minus the recorded list; that
+each manifest's tree hashes match the tree; and that the coverage ledger regenerates to what is
+committed (`--write-ledger` rewrites it). A pull request is checked by its own `tools/` and workflow,
+so review a change to `tools/`, `.github/workflows/` or a manifest as a change to the check itself. It
+reads the source commit from this clone's objects; a single-branch or shallow clone fetches it first,
+as `legacy/README.md` says. Do not invent other commands, and do not assume one exists because the
+ecosystem usually has one. Prefer parsing the JSON to a text search: a regex over JSON matches names
+wherever they appear, including in `_info` commentary, so it counts mentions rather than structure.
 
 ## Branching and commits
 
@@ -123,11 +144,13 @@ mentions rather than structure.
 
 ## Dependency and version-update posture
 
-No dependency-update configuration is present, by decision. This repository holds no package
-manifest, workflow, container image or submodule, so no Dependabot `package-ecosystem` key names
-anything here and a configuration cannot be written in either form. This is a standing condition, not
-a gap to close. Revisit it when one of those arrives; the first workflow brings a `github-actions`
-entry.
+`.github/dependabot.yml` names the one ecosystem this repository holds, `github-actions`, with
+version updates off by decision (`open-pull-requests-limit: 0`). Each `uses:` line is pinned to a
+commit SHA and moves only in a reviewed change. `tools/` uses Python's standard library alone, so no
+package manifest exists, and there is no container image or submodule. Dependabot security updates
+are a repository setting that the file does not control, and they were off when it was written;
+confirm the setting before relying on that. Revisit the file when a manifest, an image or a submodule
+arrives.
 
 ## Security
 
