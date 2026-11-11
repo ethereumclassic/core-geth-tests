@@ -17,7 +17,7 @@ Read what is present from the tree, never from a count in a document:
 | `legacy/` | the legacy suite: the state test files from `etclabscore/tests` that carry an ETC label, exactly the fillers they name, and the source's `LICENSE`. Never edited (below) |
 | `ethereum/` | the Ethereum suite: the Ethereum Foundation's tests, each source pinned. The directory appears with its first file |
 | `ethereumclassic/` | the Ethereum Classic suite: tests of our own. The directory appears with its first file |
-| `tools/` | this repository's checks, in Python's standard library, with their own tests (Commands, below) |
+| `tools/` | this repository's checks and its release-file builder, in Python's standard library, with their own tests (Commands, below) |
 | `LICENSE`, `NOTICE`, `SECURITY.md` | this repository's terms, the index of material from elsewhere, and how to report a vulnerability |
 
 **Grades.** A test is graded by where its expected values came from, and the grade is the weakest its
@@ -123,6 +123,8 @@ repository root:
 python3 -I tools/check.py                                 # every check; CI adds --require-source
 python3 -I -m unittest discover -s tools/tests -t tools   # the tools' own tests
 python3 -I tools/check.py --legacy-hashes                 # every legacy test's retesteth hashes
+python3 -I tools/release.py legacy/v0.0.1 --out DIR       # the legacy suite's release file, built at HEAD
+python3 -I tools/release.py legacy/v0.0.1 --check FILE    # whether FILE holds what HEAD builds
 ```
 
 `check` verifies that each JSON file and each legacy filler parses; that each Ethereum Classic test
@@ -135,6 +137,15 @@ reads the source commit from this clone's objects; a single-branch or shallow cl
 as `legacy/README.md` says. Do not invent other commands, and do not assume one exists because the
 ecosystem usually has one. Prefer parsing the JSON to a text search: a regex over JSON matches names
 wherever they appear, including in `_info` commentary, so it counts mentions rather than structure.
+
+`release` builds a suite's release file, which a client downloads in place of a checkout, from the
+tree committed at HEAD, in a clean checkout whose checks all pass. One tree gives one tar on any
+machine; zlib compresses it, and `--check` tells a file another zlib deflated from a different file.
+The legacy file holds `legacy/GeneralStateTests/` and `legacy/LICENSE`, tagged `legacy/vMAJOR.MINOR.PATCH`,
+the last number rising as legacy tests are removed. The `release` workflow builds it on such a tag, if
+`main` holds the tagged commit, and leaves a draft. The maintainer downloads its file outside the
+checkout, checks the tag is on `main` (`git merge-base --is-ancestor`), runs `--check`, publishes,
+then runs `gh release verify-asset` on the file.
 
 ## Branching and commits
 
@@ -182,6 +193,7 @@ Confirm with the maintainer before:
 
 - committing, or pushing to any remote;
 - opening, editing or closing a pull request or issue;
+- creating, editing or publishing a release;
 - changing repository settings, branch protection, rulesets or Actions permissions;
 - adding or changing anything under `.github/workflows/`, which runs in the organization's CI with
   its secrets;
