@@ -52,22 +52,3 @@ effect before writing to either, with a control that must not be ignored:
 git -c core.excludesFile=/dev/null check-ignore --no-index -q -- CLAUDE.local.md && echo ignored || echo "NOT ignored"
 git -c core.excludesFile=/dev/null check-ignore --no-index -q -- README.md && echo "check is broken" || echo "check discriminates"
 ```
-
-## Model selection
-
-Select by role, with a tier alias. Claude Code's
-[model configuration page](https://code.claude.com/docs/en/model-config) lists the model each alias
-selects.
-
-| Alias | Use it for |
-|---|---|
-| `haiku` | counting, listing, mechanical edits to documentation |
-| `sonnet` | documentation, provenance, structure, review |
-| `opus` | fork semantics, difficulty and state rules, assessing a source, anything where a wrong answer is a claim about consensus |
-
-## Response style
-
-- Code and commands first; explain only what was asked about.
-- Concise bullets over paragraphs, and tables for comparisons.
-- No pleasantries, and do not repeat the prompt back.
-- State what you verified and how. A count without the command that produced it is not a result.
