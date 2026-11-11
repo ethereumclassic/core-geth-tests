@@ -44,7 +44,8 @@ def main(argv=None):
     args = parser.parse_args(argv)
     root = os.path.abspath(args.root)
 
-    bytecode = tracked_bytecode(root)
+    # The checkout these tools run from, and the one checked, if another.
+    bytecode = sorted({p for r in {os.path.dirname(TOOLS), root} for p in tracked_bytecode(r)})
     if bytecode:
         print("FAIL     bytecode         Python bytecode is tracked, and could run in place of the reviewed source:")
         for path in bytecode[:50]:
