@@ -71,12 +71,13 @@ class Result:
 MAX_BYTES = 64 * 1024 * 1024  # per file, far above any file in the suites
 
 
-def git(root, *args):
-    """Run git on the repository at `root`. It never fetches a missing object: with
-    GIT_NO_LAZY_FETCH set, a partial clone fails instead."""
+def git(root, *args, data=None):
+    """Run git on the repository at `root`, with `data` on its standard input. It never fetches a
+    missing object: with GIT_NO_LAZY_FETCH set, a partial clone fails instead. It ignores replace
+    refs, so an object id names the object it hashes."""
     env = {k: v for k, v in os.environ.items() if k not in _LOCATING}
-    env.update(GIT_NO_LAZY_FETCH="1", GIT_TERMINAL_PROMPT="0")
-    return subprocess.run(["git", "-C", root, *args], capture_output=True, env=env)
+    env.update(GIT_NO_LAZY_FETCH="1", GIT_NO_REPLACE_OBJECTS="1", GIT_TERMINAL_PROMPT="0")
+    return subprocess.run(["git", "-C", root, *args], input=data, capture_output=True, env=env)
 
 
 def _refuse_constant(name):

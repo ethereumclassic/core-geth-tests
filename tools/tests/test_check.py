@@ -428,6 +428,17 @@ class CheckTest(unittest.TestCase):
             self.assertEqual(check.main(["--root", self.root]), 1)
         self.assertIn("x/__pycache__/m.cpython-312.pyc", out.getvalue())
 
+    def test_the_command_refuses_tracked_bytecode_where_its_tools_run_from(self):
+        """Run from one checkout to check another, the tools' own checkout is checked too."""
+        with repo.Repo() as tools_checkout:
+            repo.write(tools_checkout.root, "tools/__pycache__/checks.cpython-312.pyc", b"\x00")
+            repo.git(tools_checkout.root, "add", "-f", "tools/__pycache__/checks.cpython-312.pyc")
+            out = io.StringIO()
+            with mock.patch.object(check, "TOOLS", os.path.join(tools_checkout.root, "tools")), repo.hermetic(), \
+                    contextlib.redirect_stdout(out):
+                self.assertEqual(check.main(["--root", self.root]), 1)
+        self.assertIn("tools/__pycache__/checks.cpython-312.pyc", out.getvalue())
+
     def test_the_command_starts_no_log_line_with_text_from_a_file(self):
         name = "a\n::warning::injected.json"
         with open(os.path.join(self.root, name), "w") as f:
